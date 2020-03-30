@@ -1,4 +1,4 @@
-package temperaturafamilia;
+package seguimientotemperatura;
 
 import java.util.Scanner;
 import java.util.ArrayList;

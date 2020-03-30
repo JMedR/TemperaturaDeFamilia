@@ -1,4 +1,4 @@
-package temperaturafamilia;
+package seguimientotemperatura;
 
 import java.util.List;
 
@@ -14,5 +14,6 @@ public class Integrantes {
     public String retornoDatos(){
         return "El nombnre del integrante de la familia es: " + nombre + "\nEl parentesco que tiene con usted es: " + parentesco + "\nLa edad que esta persona tiene es: "+edad;
     }
+   
     
 }
