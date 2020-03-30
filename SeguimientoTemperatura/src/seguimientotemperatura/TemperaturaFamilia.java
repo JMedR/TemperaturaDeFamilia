@@ -7,12 +7,15 @@ import java.util.List;
 public class TemperaturaFamilia {
 
     public static void main(String[] args) {
-        String c= "s" ;
-        int opcion;
+        String c= "s" ,nombre,parentesco;
+        int opcion, edad;
+        double temperatura;
         Scanner Lectura = new Scanner(System.in);
-        List<String> integrantesFamilia; 
+        List<Integrantes> integrantesFamilia; 
         integrantesFamilia = new ArrayList<>();
         while(c.equals("s") ||c.equals("S")){
+            
+            
             System.out.println("Opciones: ");
             System.out.println("| 1 | Mostrar integrantes de la familia");
             System.out.println("| 2 | Agregar Integrantes a la familia");
@@ -29,6 +32,15 @@ public class TemperaturaFamilia {
                     
                     break;
                 case 2:
+                    System.out.print("Ingrese el nombre del nuevo integrante: ");
+                    nombre = Lectura.next();
+                    System.out.println("Ingrese el parentesco: ");
+                    parentesco = Lectura.next();
+                    System.out.println("Ingrese la edad del familiar: ");
+                    edad = Lectura.nextInt();
+                    System.out.println("Ingrese una temperatura de inicio en grados celcius: ");
+                    temperatura = Lectura.nextDouble();
+                    integrantesFamilia.add(new Integrantes(nombre,parentesco,edad));
                     break;
                 case 3:
                     break;
