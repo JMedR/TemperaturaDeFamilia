@@ -12,16 +12,23 @@ public class Integrantes {
         this.temperatura = temperatura;
         pila.InsertarNodo(temperatura);
     }  
-    public Integrantes(){
-        pila.InsertarNodo(temperatura);
+
+    /*public void setPila(ActualizacionTemperaturas pila) {
+        this.pila = pila;
     }
+
+    /*public Integrantes(double temperatura){
+        this.temperatura = temperatura;
+        pila.InsertarNodo(temperatura);
+    }*/
     public void mostrarTemperaturas(){
         pila.MostrarValores(); 
     }
     public double mostrarUltimaTemp(){
         double temp = pila.MostrarUltimoValor();
-        System.out.println("La ultima temperatura es: "+ temp);
-        return temp;
+        System.out.print("La ultima temperatura es: ");
+        return 0;
+        
     }
     public String soloNombres(){
         return nombre;

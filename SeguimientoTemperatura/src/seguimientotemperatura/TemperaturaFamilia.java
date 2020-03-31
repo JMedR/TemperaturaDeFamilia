@@ -17,13 +17,14 @@ public class TemperaturaFamilia {
             
             
             System.out.println("Opciones: ");
-            System.out.println("| 1 | Mostrar integrantes de la familia");
+            System.out.println("| 1 | Mostrar integrantes de la familia y datos actuales");
             System.out.println("| 2 | Agregar Integrantes a la familia");
             System.out.println("| 3 | Retirar integrantes de la familia");
             System.out.println("| 4 | Actualizar temperatura");
+            System.out.println("| 5 | Ver historial de temperaturas");
             System.out.print("\nIngrese la opcion a realizar: ");
             opcion = Lectura.nextInt();
-            while(opcion<1||opcion>3){
+            while(opcion<1||opcion>5){
                 System.out.print("Opcion no valida, vuelva a ingresarla: ");
                 opcion = Lectura.nextInt();
                 System.out.println();
@@ -37,7 +38,6 @@ public class TemperaturaFamilia {
                         System.out.println("Integrante numero:" + contador);
                         System.out.println(e.retornoDatos());
                         System.out.println(e.mostrarUltimaTemp());
-                        System.out.println("");
                     }
                     System.out.println("Presiona una tecla para continuar...");
                     new java.util.Scanner(System.in).nextLine();
@@ -53,6 +53,8 @@ public class TemperaturaFamilia {
                     edad = Lectura.nextInt();
                     System.out.print("Ingrese una temperatura de inicio en grados celcius: ");
                     temperatura = Lectura.nextDouble();
+                    
+                    
                     integrantesFamilia.add(new Integrantes(nombre,parentesco,edad,temperatura));
                     System.out.println("Presiona una tecla para continuar...");
                     new java.util.Scanner(System.in).nextLine();
@@ -97,18 +99,50 @@ public class TemperaturaFamilia {
                         System.out.println("Cancelacion de actualizacion de integrante completada con exito.");
                     }else{
                         System.out.print("Ingrese la nueva temperatura separada por coma decimal: ");
-                        temperatura = Lectura.nextDouble();
-                        
-                       // integrantesFamilia.add(pregunta-1,);
-                        
+                        temperatura = Lectura.nextDouble(); 
+                        contador=0;
+                        for(Integrantes e : integrantesFamilia){
+                        contador++;
+                            if (contador==pregunta) {
+                                e.pila.InsertarNodo(temperatura);
+                            }
+                        }
                         System.out.println("Actualizacion de integrante completada con exito");
                     }
                     System.out.println("Presiona una tecla para continuar...");
                     new java.util.Scanner(System.in).nextLine();
                     break;
+                case 5:
+                    System.out.println("Historial de temperaturas\n");
+                    System.out.println("0 | Cancelar visualizacion de historial de temperaturas");
+                    for(Integrantes e : integrantesFamilia){
+                        contador++;
+                        System.out.println(contador+ " | "+ e.soloNombres());
+                    }
+                    System.out.println("Cual es el numero del integrante del cual va a visualizar el historial: ");
+                    pregunta = Lectura.nextInt();
+                    while(pregunta<0||pregunta>integrantesFamilia.size()){
+                        System.out.print("Dato errado, ingreselo nuevamente ");
+                        pregunta = Lectura.nextInt();
+                    }
+                    if(pregunta==0){
+                        System.out.println("Cancelacion de visualizaciuon de histoirial completada con exito.");
+                    }else{
+                        contador=0;
+                        for(Integrantes e : integrantesFamilia){
+                        contador++;
+                            if (contador==pregunta) {
+                                e.mostrarTemperaturas();
+                            }
+                        }
+                    }
+                    System.out.println("Presiona una tecla para continuar...");
+                    new java.util.Scanner(System.in).nextLine();
+                    break;
             }
-            System.out.println("Desea volver al menu de inicio? S o N");
+            System.out.print("Desea volver al menu de inicio? S o N ");
             c = Lectura.next();
+            System.out.println("");
         }
     }
 }
