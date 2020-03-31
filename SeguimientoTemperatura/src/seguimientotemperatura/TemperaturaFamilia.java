@@ -9,7 +9,7 @@ public class TemperaturaFamilia {
     public static void main(String[]args){
         String c= "s" ,nombre,parentesco;
         int opcion, edad, contador, pregunta;
-        double temperatura;
+        double temperatura,compa;
         Scanner Lectura = new Scanner(System.in);
         List<Integrantes> integrantesFamilia; 
         integrantesFamilia = new ArrayList<>();
@@ -37,7 +37,8 @@ public class TemperaturaFamilia {
                         contador++;
                         System.out.println("Integrante numero:" + contador);
                         System.out.println(e.retornoDatos());
-                        System.out.println(e.mostrarUltimaTemp());
+                        System.out.println(e.mostrarUltimaTemp()+"°C");
+                        System.out.println("");
                     }
                     System.out.println("Presiona una tecla para continuar...");
                     new java.util.Scanner(System.in).nextLine();
@@ -51,7 +52,7 @@ public class TemperaturaFamilia {
                     parentesco = Lectura.next();
                     System.out.print("Ingrese la edad del familiar: ");
                     edad = Lectura.nextInt();
-                    System.out.print("Ingrese una temperatura de inicio en grados celcius: ");
+                    System.out.print("Ingrese una temperatura de inicio en\n\tgrados celcius separado por coma decimal: ");
                     temperatura = Lectura.nextDouble();
                     
                     
@@ -119,7 +120,7 @@ public class TemperaturaFamilia {
                         contador++;
                         System.out.println(contador+ " | "+ e.soloNombres());
                     }
-                    System.out.println("Cual es el numero del integrante del cual va a visualizar el historial: ");
+                    System.out.print("Cual es el numero del integrante del cual va a visualizar el historial: ");
                     pregunta = Lectura.nextInt();
                     while(pregunta<0||pregunta>integrantesFamilia.size()){
                         System.out.print("Dato errado, ingreselo nuevamente ");
@@ -129,6 +130,7 @@ public class TemperaturaFamilia {
                         System.out.println("Cancelacion de visualizaciuon de histoirial completada con exito.");
                     }else{
                         contador=0;
+                        System.out.println("\n\nUltimos datos ingresados en la parte superior.");
                         for(Integrantes e : integrantesFamilia){
                         contador++;
                             if (contador==pregunta) {
@@ -140,7 +142,7 @@ public class TemperaturaFamilia {
                     new java.util.Scanner(System.in).nextLine();
                     break;
             }
-            System.out.print("Desea volver al menu de inicio? S o N ");
+            System.out.print("Desea volver al menu de inicio? S o N: ");
             c = Lectura.next();
             System.out.println("");
         }

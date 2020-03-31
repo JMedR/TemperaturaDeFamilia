@@ -22,9 +22,11 @@ public class ActualizacionTemperaturas {
     //mostrar contenido
     public void MostrarValores(){
         nodo recorrido = ultimoValor;
-        while(recorrido!=null){
-        lista += recorrido.informacion + "\n";
+        while(recorrido != null){
+        lista += recorrido.informacion +"°C\n";
         recorrido = recorrido.siguiente;
         }
+        System.out.println(lista);
+        lista="";
     }
 }
