@@ -36,6 +36,7 @@ public class TemperaturaFamilia {
                         contador++;
                         System.out.println("Integrante numero:" + contador);
                         System.out.println(e.retornoDatos());
+                        System.out.println(e.mostrarUltimaTemp());
                         System.out.println("");
                     }
                     System.out.println("Presiona una tecla para continuar...");
@@ -80,7 +81,30 @@ public class TemperaturaFamilia {
                     new java.util.Scanner(System.in).nextLine();
                     break;
                 case 4:
-                    
+                    System.out.println("Actualizar temperatura\n");
+                    System.out.println("0 | Cancelar actualizacion de temperatura");
+                    for(Integrantes e : integrantesFamilia){
+                        contador++;
+                        System.out.println(contador+ " | "+ e.soloNombres());
+                    }
+                    System.out.println("Cual es el numero del integrante que se va a actualizar: ");
+                    pregunta = Lectura.nextInt();
+                    while(pregunta<0||pregunta>integrantesFamilia.size()){
+                        System.out.print("Dato errado, ingreselo nuevamente ");
+                        pregunta = Lectura.nextInt();
+                    }
+                    if(pregunta==0){
+                        System.out.println("Cancelacion de actualizacion de integrante completada con exito.");
+                    }else{
+                        System.out.print("Ingrese la nueva temperatura separada por coma decimal: ");
+                        temperatura = Lectura.nextDouble();
+                        
+                       // integrantesFamilia.add(pregunta-1,);
+                        
+                        System.out.println("Actualizacion de integrante completada con exito");
+                    }
+                    System.out.println("Presiona una tecla para continuar...");
+                    new java.util.Scanner(System.in).nextLine();
                     break;
             }
             System.out.println("Desea volver al menu de inicio? S o N");
