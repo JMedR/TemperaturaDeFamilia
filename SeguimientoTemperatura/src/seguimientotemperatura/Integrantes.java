@@ -14,18 +14,8 @@ public class Integrantes {
     public Integrantes(double temperatura){
         this.temperatura = temperatura;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setParentesco(String parentesco) {
-        this.parentesco = parentesco;
-    }
-
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
+    
+    
     public void setTemperatura(double temperatura) {
         this.temperatura = temperatura;
     }    

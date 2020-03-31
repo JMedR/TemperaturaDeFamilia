@@ -42,7 +42,7 @@ public class TemperaturaFamilia {
                     new java.util.Scanner(System.in).nextLine();
                     break;
                 case 2:
-                    //Integrantes i = new Integrantes();
+                    
                     System.out.println("\n");
                     System.out.print("Ingrese el nombre del nuevo integrante: ");
                     nombre = Lectura.next();
@@ -52,14 +52,11 @@ public class TemperaturaFamilia {
                     edad = Lectura.nextInt();
                     System.out.print("Ingrese una temperatura de inicio en grados celcius: ");
                     temperatura = Lectura.nextDouble();
-                    /*i.setEdad(edad);
-                    i.setNombre(nombre);
-                    i.setParentesco(parentesco);
-                    i.setTemperatura(temperatura);*/
                     integrantesFamilia.add(new Integrantes(nombre,parentesco,edad,temperatura));
                     System.out.println("Presiona una tecla para continuar...");
                     new java.util.Scanner(System.in).nextLine();
                     break;
+                    
                 case 3:
                     System.out.println("Eliminar integrante de la familia\n");
                     System.out.println("0 | Cancelar eliminacion de integrante");
